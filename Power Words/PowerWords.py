@@ -5,7 +5,7 @@ Created on Apr 18, 2015
 '''
 import pygame
 import random
-import sys
+
 
 pygame.init()
 
@@ -18,6 +18,12 @@ heroMove = 0
 clock = pygame.time.Clock()
 moveLeft = False
 moveRight = False
+
+font = pygame.font.SysFont(None, 25)
+
+def textDisplay(msg,color):
+    screen_text = font.render(msg, True, color)
+    gameDisplay.blit(screen_text, [windowSizeX/2.1,windowSizeY/2.1])
 
 while gameRun:
     windowSizeX,windowSizeY = gameDisplay.get_size()
@@ -69,6 +75,7 @@ while gameRun:
     pygame.display.update()
     clock.tick(60)
     
+textDisplay("Goodbye!", (0,0,0))
 
 pygame.quit()
 quit
